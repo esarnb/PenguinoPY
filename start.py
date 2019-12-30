@@ -16,7 +16,7 @@ bot = commands.Bot(
 )
 
 # Load cogs files from Cogs directory
-[bot.load_extension(f'Cogs.{f.replace(".py", "")}') for f in os.listdir('Cogs') if not f.startswith('__')]
+[bot.load_extension(f'cogs.{f.replace(".py", "")}') for f in os.listdir('cogs') if not f.startswith('__')]
 
 # Login
 bot.run(config.TOKEN)

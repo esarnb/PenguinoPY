@@ -11,7 +11,7 @@ class Info(commands.Cog):
     @commands.command(name="ping", alias=["pong"], description="Returns latency")
     async def ping(self, c):
         await c.send(embed=discord.Embed(
-            description=f'❄ Message Delay: {round(self.bot.latency, 2)}ms'
+            description=f'❄ Latency: {round(self.bot.latency, 2)}ms'
         ))
     
     
