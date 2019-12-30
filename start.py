@@ -7,6 +7,8 @@
 import config, discord, os
 from discord.ext import commands
 
+# To DO: # Incorporate Mongo DB for prefixes
+
 # Initialize bot with own default values
 bot = commands.Bot(
     command_prefix=config.PREFIX,
