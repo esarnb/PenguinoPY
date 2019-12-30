@@ -7,16 +7,16 @@
 import config, discord, os
 from discord.ext import commands
 
-# Initialize bot
+# Initialize bot with own default values
 bot = commands.Bot(
     command_prefix=config.PREFIX,
     owner_ids=[251091302303662080, 184157133187710977], # 1. Myself, 2. AB0529
-    activity=discord.Activity(name='Netflix', type=discord.ActivityType.watching),
+    activity=discord.Activity(name="Netflix", type=discord.ActivityType.watching),
     case_insensitive=True
 )
 
-# Load cogs files from Cogs directory
-[bot.load_extension(f'cogs.{f.replace(".py", "")}') for f in os.listdir('cogs') if not f.startswith('__')]
+# Load cogs files from Cogs directory # One-Liner Created by SoulSink 
+[bot.load_extension(f"cogs.{f.replace('.py', '')}") for f in os.listdir("cogs") if not f.startswith("__")]
 
-# Login
+# Log into the discord service with the bot token
 bot.run(config.TOKEN)
