@@ -9,6 +9,7 @@ class Fun(commands.Cog):
     @commands.command(name="say", alias=["speak"], description="Says input phrases")
     async def say(self, c, *args):
         await c.send(" ".join(args) if args else "No arguments provided")
+        await c.message.delete()
 
 def setup(bot):
     bot.add_cog(Fun(bot))

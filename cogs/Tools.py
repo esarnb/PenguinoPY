@@ -5,7 +5,7 @@ from discord.ext import commands
 class Tools(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        # self._last_member = None
+        self.Tools = self
 
     # Generate a random color everytime the function is called
     def rColor(self): return random.randint(0, 0xffffff)
@@ -17,7 +17,7 @@ class Tools(commands.Cog):
 
     # Parse an error into an embed and send it to the channel 
     async def error(self, c, _type="None", err="Error prompt", colour=discord.Colour.red()):
-        await self.embed(c, _type, err)
+        await self.Tools.embed(c, _type, err)
 
 def setup(bot):
     bot.add_cog(Tools(bot))
